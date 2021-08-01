@@ -23,7 +23,7 @@ function App() {
   }
 
   const dateBuilder = (d) =>{ 
-    let months = ["January", "February", "March", "April", "June", "July", "August", "September", "October", "November", "December"];
+    let months = ["", "January", "February", "March", "April", "June", "July", "August", "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
     let day = days[d.getDay()];
     let date = d.getDate();
@@ -35,7 +35,7 @@ function App() {
     <div className={typeof(weather.main) !=  "undefined" ?((weather.main.temp > 20) ? 'app-warm' : 'app'): 'app'}>
       <main>
         <div className="search-box">
-          <input type="text" className="search-bar" placeholder="Search..."onChange ={e =>setQuery(e.target.value)} value = {query} onKeyPress = {search} />
+          <input type="text" className="search-bar" placeholder="Enter city"onChange ={e =>setQuery(e.target.value)} value = {query} onKeyPress = {search} />
         </div>
 
       {(typeof weather.main != "undefined") ? (
